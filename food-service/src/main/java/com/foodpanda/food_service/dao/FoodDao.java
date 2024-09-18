@@ -30,6 +30,22 @@ public class FoodDao {
         }
     }
 
+    public Food findById(Long id) {
+        String sql = "SELECT * FROM food WHERE id = ?";
+        try {
+            return jdbcTemplate.queryForObject(sql, (rs, rowNum) -> {
+                Food food = new Food();
+                food.setId(rs.getLong("id"));
+                food.setName(rs.getString("name"));
+                food.setPrice(rs.getBigDecimal("price"));
+                return food;
+            }, id);
+        } catch (EmptyResultDataAccessException e) {
+            return null;
+        }
+    }
+
+
     public List<Food> getAllFood() {
         String sql = "SELECT * FROM food";
         return jdbcTemplate.query(sql, (rs, rowNum) -> {

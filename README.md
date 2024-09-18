@@ -33,22 +33,22 @@ This project is a food delivery microservice application built with Spring Boot 
 
 2. **Create the database:**
 
-  ```
-  CREATE DATABASE user_service_db;
-  CREATE DATABASE food_service_db;
-  CREATE DATABASE order_service_db;
-  ```
+     ```
+     CREATE DATABASE user_service_db;
+     CREATE DATABASE food_service_db;
+     CREATE DATABASE order_service_db;
+     ```
 
 3. **Configure application properties:**
    Update the application.properties file in each microservice with your MySQL connection details. Example configuration for food-service:
-  ```
-  spring.datasource.url=jdbc:mysql://localhost:3306/food_service_db
-  spring.datasource.username=root
-  spring.datasource.password=password
- ```
+     ```
+     spring.datasource.url=jdbc:mysql://localhost:3306/food_service_db
+     spring.datasource.username=root
+     spring.datasource.password=password
+    ```
 
 ### Access the APIs
 
-User Service: http://localhost:8081/auth/users
-Food Service: http://localhost:8082/api/food
-Order Service: http://localhost:8083/api/orders
+- User Service: http://localhost:8081/auth/users
+- Food Service: http://localhost:8082/api/food
+- Order Service: http://localhost:8083/api/orders
